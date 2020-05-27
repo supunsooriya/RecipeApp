@@ -1,0 +1,14 @@
+<a style="cursor: pointer;" routerLinkActive="active" class="row list-group-item clearfix" style="display: flex; " [routerLink]="[index]" *ngFor="let recipeEl of recipe">
+    <div class="col-md-8">
+        <h4 class="list-group-item-heading">{{recipeEl.name}}</h4>
+        <p class="list-group-item-text">{{recipeEl.description}}</p>
+    </div>
+    <span class="col-md-4">
+        <img
+            src="{{recipeEl.imagePath}}"
+            alt="recipe.name"
+            class="img-responsive"
+            style="float: right; max-height: 80px; max-width: 80px;"
+        >
+    </span>
+</a>
