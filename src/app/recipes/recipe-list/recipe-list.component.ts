@@ -14,11 +14,16 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class RecipeListComponent implements OnInit {
 
   @Output() recipeWasSelected = new EventEmitter();
-  recipe: Recipe[];
+  recipes: Recipe[];
   constructor(private recipeService: RecipeService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.recipe = this.recipeService.grtRecipes();
+    this.recipeService.recipeChanged.subscribe(
+      (recipes: Recipe[])=>{
+        this.recipes= recipes;
+      }
+    );
+    this.recipes = this.recipeService.grtRecipes();
   }
 
   onRecipeSelected(recipe: Recipe) {

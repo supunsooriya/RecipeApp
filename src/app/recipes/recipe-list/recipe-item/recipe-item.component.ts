@@ -9,7 +9,7 @@ import { EventEmitter } from "@angular/core";
 })
 export class RecipeItemComponent implements OnInit {
 
-  @Input() recipe: Recipe;
+  @Input() recipes: Recipe;
   @Input() index: number;
   ngOnInit() {
   }
